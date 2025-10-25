@@ -1,6 +1,6 @@
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 51, 255);
   overflow: hidden;
 }
 
@@ -8,7 +8,7 @@
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #62ff00;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -17,14 +17,14 @@
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #ff00f2;
   color: black;
 }
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-  background-color: #002fff;
-  color: white;
+  background-color: #00ffbb;
+  color: rgb(0, 0, 0);
 }
 
 /* Hide the icon that should open and close the topnav on small screens */
@@ -56,7 +56,7 @@
 /* the "responsive" class attribute will be added to the topnav by the JavaScript code */
 /* This media query sets the style for the unfolded topnav */
 /* It makes the topnav look good on small screens (display the links vertically instead of horizontally)  */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 650px) {
   .topnav.responsive {
     position: relative;
   }
@@ -72,4 +72,70 @@
     display: block;
     text-align: left;
   }
+}
+
+img {
+  border: 5px solid #ff0000;
+}
+
+/* Container for the overlay image */
+.container {
+  position: relative;
+  display: inline-block; 
+  width: 500px; 
+}
+
+/* The image itself */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The overlay layer */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 140, 186, 0.7); 
+  z-index: 1; 
+}
+
+/* Hover effect */
+.container:hover .overlay {
+  opacity: 1;
+}
+
+/* Overlay text */
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
